@@ -5,39 +5,39 @@
 #define DEFAULTFILE "data.txt"
 
 using namespace std;
-//Žg‚¤ –¼‘O‹óŠÔ std
-//–‚–@‚ÌŒ¾—t@–¼‘O‹óŠÔ[std]‚ðí‚É—LŒø‚É‚·‚é‚Ì‚Åstd::‚ðÈ—ª‚Å‚«‚é‚æ‚¤‚É‚È‚éB
+//ä½¿ã† åå‰ç©ºé–“ std
+//é­”æ³•ã®è¨€è‘‰ã€€åå‰ç©ºé–“[std]ã‚’å¸¸ã«æœ‰åŠ¹ã«ã™ã‚‹ã®ã§std::ã‚’çœç•¥ã§ãã‚‹ã‚ˆã†ã«ãªã‚‹ã€‚
 //std::cin -> cin 
-//ƒƒŠƒbƒg:‚í‚©‚è‚â‚·‚­‚È‚éB
-//ƒfƒƒŠƒbƒg:•¡”•Ê‚Ì–¼‘O‹óŠÔ‚ðéŒ¾‚µ‚½ê‡Au“¯‚¶ˆø”v‚Åu“¯‚¶–¼‘Ov‚ÌŠÖ”‚È‚Ç‚ª‚ ‚é‚Æ‚«‚ÉA
-// ‚Ç‚¿‚ç‚ÌŠÖ”‚©ƒRƒ“ƒpƒCƒ‰‚©‚ç‚í‚©‚ç‚È‚­‚È‚é‚Ì‚ÅBƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ªo‚Ä‚µ‚Ü‚¤B
-// using std::cin;@‚Ì‚æ‚¤‚É“Á’è‚ÌŠÖ”“™‚Ì‚Ý‚ðŽw’è‚·‚é‚Ì‚ª–]‚Ü‚µ‚¢B
+//ãƒ¡ãƒªãƒƒãƒˆ:ã‚ã‹ã‚Šã‚„ã™ããªã‚‹ã€‚
+//ãƒ‡ãƒ¡ãƒªãƒƒãƒˆ:è¤‡æ•°åˆ¥ã®åå‰ç©ºé–“ã‚’å®£è¨€ã—ãŸå ´åˆã€ã€ŒåŒã˜å¼•æ•°ã€ã§ã€ŒåŒã˜åå‰ã€ã®é–¢æ•°ãªã©ãŒã‚ã‚‹ã¨ãã«ã€
+// ã©ã¡ã‚‰ã®é–¢æ•°ã‹ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã‹ã‚‰ã‚ã‹ã‚‰ãªããªã‚‹ã®ã§ã€‚ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼ãŒå‡ºã¦ã—ã¾ã†ã€‚
+// using std::cin;ã€€ã®ã‚ˆã†ã«ç‰¹å®šã®é–¢æ•°ç­‰ã®ã¿ã‚’æŒ‡å®šã™ã‚‹ã®ãŒæœ›ã¾ã—ã„ã€‚
 
-string randstr(int digits) {//—”‚Åƒ‰ƒ“ƒ_ƒ€‚È•¶Žš—ñ‚ð¶¬iƒ\ƒ‹ƒg—pj
+string randstr(int digits) {//ä¹±æ•°ã§ãƒ©ãƒ³ãƒ€ãƒ ãªæ–‡å­—åˆ—ã‚’ç”Ÿæˆï¼ˆã‚½ãƒ«ãƒˆç”¨ï¼‰
 	string result;
 	int random = 0;
-	char desc[] = {//•¶Žšƒe[ƒuƒ‹
+	char desc[] = {//æ–‡å­—ãƒ†ãƒ¼ãƒ–ãƒ«
 	'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O',
 	'P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3',
 	'4','5','6','7','8','9'
 	};
 	srand(time(NULL));
 	for (int i = 0; i < digits; i++) {
-		random = rand() % 36;//•¶Žš—ñ
-		result = desc[random] + result;//•¶Žšƒe[ƒuƒ‹”z—ñ‚Ì•¶Žš‚ð•¶Žš—ñ‚É’Ç‰Á
+		random = rand() % 36;//æ–‡å­—åˆ—
+		result = desc[random] + result;//æ–‡å­—ãƒ†ãƒ¼ãƒ–ãƒ«é…åˆ—ã®æ–‡å­—ã‚’æ–‡å­—åˆ—ã«è¿½åŠ 
 	}
 	return result;
 }
 
 int main(void) {
 	string s;
-	cout << "ƒ‚[ƒh‚ð‘I‚ñ‚Å‚­‚¾‚³‚¢B" << endl << "1.“o˜^\t2.ƒƒOƒCƒ“" << endl;
-	//ƒƒjƒ…[‰æ–Ê‚Ì•\Ž¦
-	//std::cout •W€o—Í‚Éo—Í
-	//std::endl ‰üs 
+	cout << "ãƒ¢ãƒ¼ãƒ‰ã‚’é¸ã‚“ã§ãã ã•ã„ã€‚" << endl << "1.ç™»éŒ²\t2.ãƒ­ã‚°ã‚¤ãƒ³" << endl;
+	//ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”»é¢ã®è¡¨ç¤º
+	//std::cout æ¨™æº–å‡ºåŠ›ã«å‡ºåŠ›
+	//std::endl æ”¹è¡Œ 
 	cin >> s;
-	//ƒ‚[ƒh‚ÌŽæ“¾
-	//std::cin •W€“ü—Í‚©‚çŽæ“¾
+	//ãƒ¢ãƒ¼ãƒ‰ã®å–å¾—
+	//std::cin æ¨™æº–å…¥åŠ›ã‹ã‚‰å–å¾—
 	bool loop = true;
 	while (loop) {
 		if (s == "1") {
@@ -45,85 +45,85 @@ int main(void) {
 			bool check = true;
 			while (check)
 			{
-				cout << "ƒ†[ƒU[–¼‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B:";
+				cout << "ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚:";
 				cin >> s;
 				if (!ifs.is_open()) {
 					break;
 				}
 				else {
 					ifs.seekg(SEEK_SET);
-					while (!ifs.eof()) {//ƒf[ƒ^ƒtƒ@ƒCƒ‹‚©‚ç“¯‚¶ƒ†[ƒU[–¼‚ð’Tõ
+					while (!ifs.eof()) {//ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰åŒã˜ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’æŽ¢ç´¢
 						string buff;
 						getline(ifs, buff);
 						if (s == buff.substr(0, buff.find(" "))) {
-							//“¯‚¶ƒ†[ƒU[–¼‚ª‘¶Ý‚·‚é
-							cout << "‚»‚Ìƒ†[ƒU[–¼‚Í‚·‚Å‚ÉŽg—p‚³‚ê‚Ä‚¢‚Ü‚·B" << endl;
+							//åŒã˜ãƒ¦ãƒ¼ã‚¶ãƒ¼åãŒå­˜åœ¨ã™ã‚‹
+							cout << "ãã®ãƒ¦ãƒ¼ã‚¶ãƒ¼åã¯ã™ã§ã«ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã™ã€‚" << endl;
 							break;
 						}
 					}
-					//“¯‚¶ƒ†[ƒU[–¼‚ª‘¶Ý‚µ‚È‚¢
+					//åŒã˜ãƒ¦ãƒ¼ã‚¶ãƒ¼åãŒå­˜åœ¨ã—ãªã„
 					if (ifs.eof()) check = false;
 				}
 			}
 			ifs.close();
 			ofstream ofs(DEFAULTFILE, ios::ate | ios::app);
-			//ƒ†[ƒU[–¼‚ð‘‚«ž‚ÞB
+			//ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’æ›¸ãè¾¼ã‚€ã€‚
 			ofs << s << " ";
-			cout << "ƒpƒXƒ[ƒh‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B:";
+			cout << "ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚:";
 			cin >> s;
 			string salt;
-			//ƒ\ƒ‹ƒg¶¬
+			//ã‚½ãƒ«ãƒˆç”Ÿæˆ
 			salt = randstr(20);
-			//ƒ\ƒ‹ƒg‚ÆƒpƒXƒ[ƒh‚ðŒ‹‡‚·‚éB‚±‚ê‚ðA‚Æ‚·‚é
+			//ã‚½ãƒ«ãƒˆã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’çµåˆã™ã‚‹ã€‚ã“ã‚Œã‚’Aã¨ã™ã‚‹
 			s = salt + s;
-			//ƒnƒbƒVƒ…‰»‚µ‚½A‚ðƒtƒ@ƒCƒ‹‚É‘‚«ž‚Þ
+			//ãƒãƒƒã‚·ãƒ¥åŒ–ã—ãŸAã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã‚€
 			ofs << hash<string>()(s) << salt << endl;
-			//”FØ‚Éi‚Þ‚©Šm”F
-			cout << "‘±‚¢‚ÄƒƒOƒCƒ“‚µ‚Ü‚·‚©H" << endl << "yes or no" << endl;
+			//èªè¨¼ã«é€²ã‚€ã‹ç¢ºèª
+			cout << "ç¶šã„ã¦ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã‹ï¼Ÿ" << endl << "yes or no" << endl;
 			cin >> s;
 			ofs.close();
-			//uyesv‚Ü‚½‚ÍuYESv‚Ü‚½‚Íu‚Í‚¢v‚Æ“ü—Í‚³‚ê‚½‚Æ‚«
-			if (s == "yes" || s == "YES" || s == "‚Í‚¢") {
-				//‘±s‚·‚éB
+			//ã€Œyesã€ã¾ãŸã¯ã€ŒYESã€ã¾ãŸã¯ã€Œã¯ã„ã€ã¨å…¥åŠ›ã•ã‚ŒãŸã¨ã
+			if (s == "yes" || s == "YES" || s == "ã¯ã„") {
+				//ç¶šè¡Œã™ã‚‹ã€‚
 				s = "2";
 				loop = true;
 			}
-			//‚Å‚È‚¯‚ê‚Î@I—¹‚·‚é
+			//ã§ãªã‘ã‚Œã°ã€€çµ‚äº†ã™ã‚‹
 			else loop = false;
 		}
 		else if (s == "2") {
 			string buff;
-			cout << "ƒ†[ƒU[–¼‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B:";
+			cout << "ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚:";
 			cin >> s;
 			ifstream ifs(DEFAULTFILE);
 			ifs.seekg(SEEK_SET);
 			while (!ifs.eof()) {
-				//ˆê’v‚·‚éƒ†[ƒU[–¼‚Ì’Tõ
+				//ä¸€è‡´ã™ã‚‹ãƒ¦ãƒ¼ã‚¶ãƒ¼åã®æŽ¢ç´¢
 				getline(ifs, buff);
 				if (s == buff.substr(0, buff.find(" "))) {
 					break;
 				}
 			}
-			cout << "ƒpƒXƒ[ƒh‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B:";
+			cout << "ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚:";
 			cin >> s;
 			string buff2 = buff;
-			//ƒtƒ@ƒCƒ‹‚æ‚èƒ\ƒ‹ƒg‚ðŽæ“¾
+			//ãƒ•ã‚¡ã‚¤ãƒ«ã‚ˆã‚Šã‚½ãƒ«ãƒˆã‚’å–å¾—
 			buff2.erase(0, buff2.length()-20);
-			//“ü—Í‚³‚ê‚½ƒpƒXƒ[ƒh‚Æƒ\ƒ‹ƒg‚ðŒ‹‡ ‚±‚ê‚ðB‚Æ‚·‚éB
+			//å…¥åŠ›ã•ã‚ŒãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¨ã‚½ãƒ«ãƒˆã‚’çµåˆ ã“ã‚Œã‚’Bã¨ã™ã‚‹ã€‚
 			s = buff2+s;
-			//ƒnƒbƒVƒ…‰»‚³‚ê‚½ƒpƒXƒ[ƒh‚Æƒ\ƒ‹ƒg‚Ì‚Ý‚É‚·‚é
+			//ãƒãƒƒã‚·ãƒ¥åŒ–ã•ã‚ŒãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¨ã‚½ãƒ«ãƒˆã®ã¿ã«ã™ã‚‹
 			buff.erase(0, buff.find(" ") + 1);
-			//ƒnƒbƒVƒ…‰»‚³‚ê‚½ƒpƒXƒ[ƒh‚ðŽæ“¾
+			//ãƒãƒƒã‚·ãƒ¥åŒ–ã•ã‚ŒãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å–å¾—
 			buff=buff.substr(0,buff.length()-20);
-			//ƒnƒbƒVƒ…‰»‚³‚ê‚½ƒpƒXƒ[ƒh‚ÆƒnƒbƒVƒ…‰»‚µ‚½A‚ð”äŠr‚·‚é
+			//ãƒãƒƒã‚·ãƒ¥åŒ–ã•ã‚ŒãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¨ãƒãƒƒã‚·ãƒ¥åŒ–ã—ãŸBã‚’æ¯”è¼ƒã™ã‚‹
 			if (to_string(hash<string>()(s)) == buff && !ifs.eof()) {
-				//ˆê’v‚µ‚½‚È‚ç
-				cout << "”FØ¬Œ÷II";
+				//ä¸€è‡´ã—ãŸãªã‚‰
+				cout << "èªè¨¼æˆåŠŸï¼ï¼";
 				cin.get();
 			}
 			else {
-				//•sˆê’v‚È‚ç‚Î
-				cout << "ƒ†[ƒU[–¼‚Ü‚½‚ÍƒpƒXƒ[ƒh‚ªˆá‚¢‚Ü‚·B" << endl;
+				//ä¸ä¸€è‡´ãªã‚‰ã°
+				cout << "ãƒ¦ãƒ¼ã‚¶ãƒ¼åã¾ãŸã¯ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒé•ã„ã¾ã™ã€‚" << endl;
 				cin.get();
 			}
 			loop = false;
